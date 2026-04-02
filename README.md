@@ -96,9 +96,6 @@ project-root/
 │
 └── README.md
 
-
----
-
 ## 🚀 How to Run the Project
 
 ### 1️⃣ Install Dependencies
@@ -107,14 +104,17 @@ Run inside each service folder:
 
 ```bash
 npm install
+```
 
 ### 2️⃣ Start Services
 
 Run each service in separate terminals:
 
+```bash
 node index.js
+```
 
-📍 Ports Used
+## 📍 Ports Used
 Service	Port
 User Service	3001
 Product Service	3002
@@ -124,7 +124,7 @@ Cart Service	3005
 Review Service	3006
 API Gateway	8080
 
-3️⃣ Access Swagger
+### 3️⃣ Access Swagger
 
 👉 Open in browser:
 
