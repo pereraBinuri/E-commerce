@@ -64,37 +64,37 @@ Each service runs independently and communicates via REST APIs.
 ---
 
 ## 📂 Project Structure
-project-root/
-│
-├── api-gateway/
-│ ├── index.js
-│ └── swagger.yaml
-│
-├── user-service/
-│ ├── index.js
-│ └── swagger.yaml
-│
-├── product-service/
-│ ├── index.js
-│ └── swagger.yaml
-│
-├── order-service/
-│ ├── index.js
-│ └── swagger.yaml
-│
-├── cart-service/
-│ ├── index.js
-│ └── swagger.yaml
-│
-├── payment-service/
-│ ├── index.js
-│ └── swagger.yaml
-│
-├── review-service/
-│ ├── index.js
-│ └── swagger.yaml
-│
-└── README.md
+- project-root/
+- │
+- ├── api-gateway/
+- │ ├── index.js
+- │ └── swagger.yaml
+- │
+- ├── user-service/
+- │ ├── index.js
+- │ └── swagger.yaml
+- │
+- ├── product-service/
+- │ ├── index.js
+- │ └── swagger.yaml
+- │
+- ├── order-service/
+- │ ├── index.js
+- │ └── swagger.yaml
+- │
+- ├── cart-service/
+- │ ├── index.js
+- │ └── swagger.yaml
+- │
+- ├── payment-service/
+- │ ├── index.js
+- │ └── swagger.yaml
+- │
+- ├── review-service/
+- │ ├── index.js
+- │ └── swagger.yaml
+- │
+- └── README.md
 
 ## 🚀 How to Run the Project
 
