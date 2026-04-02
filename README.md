@@ -130,45 +130,46 @@ API Gateway	8080
 
 http://localhost:8080/api-docs
 
-🔍 Features
-✅ Microservices architecture
-✅ API Gateway routing
-✅ Swagger API documentation
-✅ Full CRUD operations
-✅ Partial updates (PUT)
-✅ Independent services
-✅ Centralized API access
+## 🔍 Features
+- ✅ Microservices architecture
+- ✅ API Gateway routing
+- ✅ Swagger API documentation
+- ✅ Full CRUD operations
+- ✅ Partial updates (PUT)
+- ✅ Independent services
+- ✅ Centralized API access
 
-✅ Validations Implemented
-Required field validation
-Data type validation
-Positive number validation (IDs, price, quantity)
-Enum validation (role, status)
-Nested validation (address, order items)
-Proper error handling with meaningful messages
+## ✅ Validations Implemented
+- Required field validation
+- Data type validation
+- Positive number validation (IDs, price, quantity)
+- Enum validation (role, status)
+- Nested validation (address, order items)
+- Proper error handling with meaningful messages
 
-🧪 Testing
+## 🧪 Testing
 
 The system was tested using:
 
-Swagger UI
-Postman
-✔ Tested Scenarios
-Successful CRUD operations
-Missing required fields
-Invalid data types
-Negative values
-Invalid enum values
-Invalid JSON format
+- Swagger UI
+- Postman
 
-🎯 Key Highlights
-Scalable and modular architecture
-Clean separation of services
-Centralized API Gateway
-Strong validation and error handling
-Easy testing via Swagger
+## ✔ Tested Scenarios
+- Successful CRUD operations
+- Missing required fields
+- Invalid data types
+- Negative values
+- Invalid enum values
+- Invalid JSON format
 
-📚 Conclusion
+## 🎯 Key Highlights
+- Scalable and modular architecture
+- Clean separation of services
+- Centralized API Gateway
+- Strong validation and error handling
+- Easy testing via Swagger
+
+## 📚 Conclusion
 
 This project demonstrates how Microservices Architecture improves system scalability, flexibility, and maintainability.
 The use of an API Gateway provides a unified entry point and simplifies communication between clients and services.
