@@ -1,0 +1,173 @@
+openapi: 3.0.0
+info:
+  title: Payment Service API
+  version: 2.0.0
+
+components:
+  schemas:
+
+    Payment:
+      type: object
+      required:
+        - id
+        - orderId
+        - userId
+        - amount
+        - currency
+        - paymentMethod
+        - paymentStatus
+      properties:
+        id:
+          type: integer
+          example: 1
+
+        orderId:
+          type: integer
+          example: 1001
+
+        userId:
+          type: integer
+          example: 5
+
+        amount:
+          type: number
+          example: 500
+
+        currency:
+          type: string
+          example: "USD"
+
+        paymentMethod:
+          type: string
+          enum: [card, cash, paypal]
+          example: "card"
+
+        paymentStatus:
+          type: string
+          enum: [pending, completed, failed]
+          example: "completed"
+
+        createdAt:
+          type: string
+          format: date-time
+
+    PaymentUpdate:
+      type: object
+      properties:
+        orderId:
+          type: integer
+        userId:
+          type: integer
+        amount:
+          type: number
+        currency:
+          type: string
+        paymentMethod:
+          type: string
+          enum: [card, cash, paypal]
+        paymentStatus:
+          type: string
+          enum: [pending, completed, failed]
+        updatedAt:
+          type: string
+          format: date-time
+
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+
+paths:
+
+  /payments:
+    get:
+      summary: Get all payments
+      responses:
+        '200':
+          description: List of payments
+        '500':
+          description: Server error
+
+    post:
+      summary: Create a payment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Payment'
+            example:
+              id: 1
+              orderId: 1001
+              userId: 5
+              amount: 500
+              currency: "USD"
+              paymentMethod: "card"
+              paymentStatus: "completed"
+      responses:
+        '201':
+          description: Payment created
+        '400':
+          description: Validation error or duplicate
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /payments/{id}:
+    get:
+      summary: Get payment by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Payment found
+        '404':
+          description: Not found
+
+    put:
+      summary: Update payment (partial update supported)
+      description: Only provided fields will be updated
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PaymentUpdate'
+            example:
+              orderId: 1001
+              userId: 5
+              amount: 500
+              currency: "USD"
+              paymentStatus: "failed"
+              paymentMethod: "paypal"
+      responses:
+        '200':
+          description: Updated successfully
+        '400':
+          description: Validation error
+        '404':
+          description: Not found
+
+    delete:
+      summary: Delete payment
+      parameters:
+        - in: path
+          name: id
+          required: true
+      responses:
+        '200':
+          description: Deleted
+        '404':
+          description: Not found
